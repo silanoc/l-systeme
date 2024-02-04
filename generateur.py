@@ -33,6 +33,8 @@ Un L-système est noté \{V, S, \omega, P\}.
 
 def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
     """avec tutrle dessine l'axiome en entrée"""
+    position_courant = []
+    orientation_courant = []
     for i in range(len(axiome_a_appliquer)):
         if axiome_a_appliquer[i] == "F":
             t.forward(unite_dessin)
@@ -40,6 +42,20 @@ def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
             t.left(angle_dessin)
         elif axiome_a_appliquer[i] == "-":
             t.right(angle_dessin)
+        elif axiome_a_appliquer[i] =="[":
+            position_courant.append(t.position())
+            orientation_courant.append(t.heading())
+            print(t.pos(), t.heading())
+        elif axiome_a_appliquer[i] =="]":
+            t.penup()
+            t.goto(position_courant[-1])
+            t.setheading(orientation_courant[-1])
+            position_courant.pop(-1)
+            orientation_courant.pop(-1)
+            t.pendown()
+        elif axiome_a_appliquer[i] == "X":
+            pass
+        
     t.Screen()
 
 def reecrire(axiome_a_convertir, regle):
@@ -64,7 +80,6 @@ def test_koch():
         print(axiome)
         dessine(axiome, unite, angle)
         
-    
 
 if __name__ == '__main__':    
     

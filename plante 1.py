@@ -63,12 +63,14 @@ def dessine():
             Yencours.pop()
             Orientationencours.pop()           
             pendown()
+        else:
+            pass
 
 def generationsuivante(regleaconvertir):
     regleintermediaire=""
     for i in range(len(regleaconvertir)):
         if regleaconvertir[i]=="X":
-            regleintermediaire=regleintermediaire+"F[+X]F[−X]+X"
+            regleintermediaire=regleintermediaire+"F[+X]F[-X]+X"
         elif regleaconvertir[i]=="F":
             regleintermediaire=regleintermediaire+"FF"
         else:
@@ -76,25 +78,29 @@ def generationsuivante(regleaconvertir):
     return(regleintermediaire)
     
 print(regle)
-#dessine()
-regle=generationsuivante(regle)
-print(regle)
-#dessine()
-regle=generationsuivante(regle)
-print(regle)
-#dessine()
-regle=generationsuivante(regle)
-print(regle)
 dessine()
 regle=generationsuivante(regle)
+
+
 print(regle)
-#dessine()
-regle=generationsuivante(regle)
-print(regle)
-#dessine()
-regle=generationsuivante(regle)
 dessine()
 
+"""
+regle=generationsuivante(regle)
+print(regle)
+#dessine()
+regle=generationsuivante(regle)
+print(regle)
+dessine()
+regle=generationsuivante(regle)
+print(regle)
+#dessine()
+regle=generationsuivante(regle)
+print(regle)
+#dessine()
+regle=generationsuivante(regle)
+dessine()
+"""
 
 
 
