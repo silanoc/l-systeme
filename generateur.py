@@ -31,6 +31,21 @@ Un L-système est noté \{V, S, \omega, P\}.
 
 """
 
+###
+# fonctions de base
+###
+
+def reecrire(axiome_a_convertir, regle) -> str :
+    """changer les axiome d'une fois à l'autre en fonction des regles de réécritre"""
+    axiome_intermediaire = ""
+    variables_a_transformer = regle.keys()
+    for i in range(len(axiome_a_convertir)):
+        if axiome_a_convertir[i] in variables_a_transformer:
+            axiome_intermediaire = axiome_intermediaire + regle[axiome_a_convertir[i]]
+        else:
+            axiome_intermediaire = axiome_intermediaire + axiome_a_convertir[i]
+    return(axiome_intermediaire)
+
 def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
     """avec tutrle dessine l'axiome en entrée"""
     position_courant = []
@@ -55,32 +70,55 @@ def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
             t.pendown()
         elif axiome_a_appliquer[i] == "X":
             pass
-        
     t.Screen()
 
-def reecrire(axiome_a_convertir, regle):
-    axiome_intermediaire = ""
-    variables_a_transformer = regle.keys()
-    for i in range(len(axiome_a_convertir)):
-        if axiome_a_convertir[i] in variables_a_transformer:
-            axiome_intermediaire = axiome_intermediaire + regle[axiome_a_convertir[i]]
-        else:
-            axiome_intermediaire = axiome_intermediaire + axiome_a_convertir[i]
-    return(axiome_intermediaire)
+###
+# enchainements graphiques
+###
 
-def test_koch():
+def reecrire_puis_dessine(axiome, regle, unite, angle, nb_tour):
+    """fait plusieur ré-écriture et génére le tracé final"""
+    for i in range(nb_tour):
+        axiome = reecrire(axiome, regle)
+        print(axiome)
+    dessine(axiome, unite, angle)
+    
+def reecrire_cumul_dessin(axiome, regle, unite, angle, nb_tour, facteur_division):
+    """trace chaque réécriture de façon juxtaposé"""
+    couleur = ['grey', 'black', 'red', 'green', 'blue' ]
+    t.speed(10)
+    for i in range(nb_tour):
+        t.pencolor(couleur[i])
+        print(axiome)
+        dessine(axiome, unite, angle)
+        axiome = reecrire(axiome, regle)
+        unite=unite/facteur_division
+        t.penup()
+        t.home()
+        t.pendown()
+
+###
+# fonction pour controler vi un exemple connu de wikipedia
+###
+
+def test_koch_1():
     variables: list = ['F', '+', '-']
     axiome : str = "F"
     regle : dict = {"F" : "F+F-F-F+F"}
     unite :str = 10
     angle :str = 90
-    
-    for i in range(3):
-        axiome = reecrire(axiome, regle)
-        print(axiome)
-        dessine(axiome, unite, angle)
-        
+    reecrire_puis_dessine(axiome, regle, unite, angle, 3)
+
+def test_koch_2():
+    variables: list = ['F', '+', '-']
+    axiome : str = "F"
+    regle : dict = {"F" : "F+F-F-F+F"}
+    unite :str = 300
+    angle :str = 90
+    reecrire_cumul_dessin(axiome, regle, unite, angle, 5, 3)
+
 
 if __name__ == '__main__':    
     
-    test_koch()
+    test_koch_1()
+    #test_koch_2()

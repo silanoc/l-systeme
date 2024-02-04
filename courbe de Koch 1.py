@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import generateur as g
 
 """
@@ -15,14 +17,5 @@ regle : dict = {"F" : "F+F-F-F+F"}
 unite :str = 10
 angle :str = 90
 
-# Calculer les ré-éctiture souhaité
-for i in range(3):
-    axiome = g.reecrire(axiome, regle)
-    print(axiome)
-
-# dessiner
-g.dessine(axiome, unite, angle)
-
-
-
-
+#g.reecrire_puis_dessine(axiome, regle, 10, angle, 3)
+g.reecrire_cumul_dessin(axiome, regle, 500, angle, 5, 3)

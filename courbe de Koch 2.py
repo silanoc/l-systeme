@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import generateur as g
-import turtle as t
 
 """
     F : Se déplacer d’un pas unitaire (∈ V)
@@ -20,55 +21,14 @@ Un L-système est une grammaire formelle qui comprend :
     Un axiome de départ \omega choisi parmi V^+, c'est-à-dire l'état initial.
     Un ensemble de règles, noté P, de reproduction des symboles de V.
 
-
 """
 
 # Initialiser
 variables: list = ['F', '+', '-']
 axiome : str = "F"
 regle : dict = {"F" : "F+F-F-FF+F+F-F"}
-unite : str = 500
+unite : str = 10
 angle : str = 90
     
-
-print(axiome)
-t.pencolor('grey')
-g.dessine(axiome, unite, angle)
-
-
-axiome = g.reecrire(axiome, regle)
-unite=unite/4
-print(axiome)
-t.pencolor('black')
-t.penup()
-t.home()
-t.pendown()
-g.dessine(axiome, unite, angle)
-
-
-axiome = g.reecrire(axiome, regle)
-unite=unite/4
-print(regle)
-t.pencolor('red')
-t.penup()
-t.home()
-t.pendown()
-g.dessine(axiome, unite, angle)
-
-axiome = g.reecrire(axiome, regle)
-unite=unite/4
-print(regle)
-t.pencolor('green')
-t.penup()
-t.home()
-t.pendown()
-g.dessine(axiome, unite, angle)
-
-axiome = g.reecrire(axiome, regle)
-unite=unite/4
-print(regle)
-t.pencolor('blue')
-t.penup()
-t.home()
-t.pendown()
-g.dessine(axiome, unite, angle)
+#g.reecrire_puis_dessine(axiome, regle, 10, angle, 3)
+g.reecrire_cumul_dessin(axiome, regle, 500, angle, 5, 4)
