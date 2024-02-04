@@ -21,8 +21,6 @@ Un L-système est une grammaire formelle qui comprend :
     Un ensemble de règles, noté P, de reproduction des symboles de V.
 
 
-
-
 """
 
 # Initialiser
