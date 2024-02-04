@@ -1,6 +1,5 @@
-from turtle import *
-setup(width=1000,height=500)
-import tkinter as tk
+import generateur as g
+import turtle as t
 
 """
     F : Se déplacer d’un pas unitaire (∈ V)
@@ -26,70 +25,51 @@ Un L-système est une grammaire formelle qui comprend :
 
 """
 
-regle="F"
-regleintermediaire=""
-generation=0
-unite=1000
-
-def dessine():
-    for i in range(len(regle)):
-        if regle[i]=="F":
-            forward(unite)
-        if regle[i]=="+":
-            left(90)
-        if regle[i]=="-":
-            right(90)
+# Initialiser
+variables: list = ['F', '+', '-']
+axiome : str = "F"
+regle : dict = {"F" : "F+F-F-FF+F+F-F"}
+unite :str = 500
     
 
-def generationsuivante(regleaconvertir):
-    regleintermediaire=""
-    for i in range(len(regleaconvertir)):
-        if regleaconvertir[i]=="F":
-            regleintermediaire=regleintermediaire+"F+F-F-FF+F+F-F"
-        else:
-            regleintermediaire=regleintermediaire+regle[i]
-    return(regleintermediaire)
+print(axiome)
+t.pencolor('grey')
+g.dessine(axiome, unite)
 
-speed(0)
 
-print(regle)
-pencolor('grey')
-dessine()
+axiome = g.reecrire(axiome, regle)
+unite=unite/4
+print(axiome)
+t.pencolor('black')
+t.penup()
+t.home()
+t.pendown()
+g.dessine(axiome, unite)
 
-regle=generationsuivante(regle)
+
+axiome = g.reecrire(axiome, regle)
 unite=unite/4
 print(regle)
-pencolor('black')
-penup()
-home()
-pendown()
-dessine()
+t.pencolor('red')
+t.penup()
+t.home()
+t.pendown()
+g.dessine(axiome, unite)
 
-regle=generationsuivante(regle)
+axiome = g.reecrire(axiome, regle)
 unite=unite/4
 print(regle)
-pencolor('red')
-penup()
-home()
-pendown()
-dessine()
+t.pencolor('green')
+t.penup()
+t.home()
+t.pendown()
+g.dessine(axiome, unite)
 
-regle=generationsuivante(regle)
+axiome = g.reecrire(axiome, regle)
 unite=unite/4
 print(regle)
-pencolor('green')
-penup()
-home()
-pendown()
-dessine()
-
-regle=generationsuivante(regle)
-unite=unite/4
-print(regle)
-pencolor('blue')
-penup()
-home()
-pendown()
-dessine()
-
-
+t.pencolor('blue')
+t.penup()
+t.home()
+t.pendown()
+g.dessine(axiome, unite)
