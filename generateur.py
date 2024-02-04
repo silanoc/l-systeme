@@ -31,15 +31,15 @@ Un L-système est noté \{V, S, \omega, P\}.
 
 """
 
-def dessine(axiome_a_appliquer : str, unite_dessin : int) -> None:
+def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
     """avec tutrle dessine l'axiome en entrée"""
     for i in range(len(axiome_a_appliquer)):
         if axiome_a_appliquer[i] == "F":
             t.forward(unite_dessin)
         elif axiome_a_appliquer[i] == "+":
-            t.left(90)
+            t.left(angle_dessin)
         elif axiome_a_appliquer[i] == "-":
-            t.right(90)
+            t.right(angle_dessin)
     t.Screen()
 
 def reecrire(axiome_a_convertir, regle):
@@ -57,11 +57,12 @@ def test_koch():
     axiome : str = "F"
     regle : dict = {"F" : "F+F-F-F+F"}
     unite :str = 10
+    angle :str = 90
     
     for i in range(3):
         axiome = reecrire(axiome, regle)
         print(axiome)
-        dessine(axiome, unite)
+        dessine(axiome, unite, angle)
         
     
 

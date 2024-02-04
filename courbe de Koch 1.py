@@ -13,6 +13,7 @@ variables: list = ['F', '+', '-']
 axiome : str = "F"
 regle : dict = {"F" : "F+F-F-F+F"}
 unite :str = 10
+angle :str = 90
 
 # Calculer les ré-éctiture souhaité
 for i in range(3):
@@ -20,7 +21,7 @@ for i in range(3):
     print(axiome)
 
 # dessiner
-g.dessine(axiome, unite)
+g.dessine(axiome, unite, angle)
 
 
 

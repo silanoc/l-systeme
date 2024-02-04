@@ -27,12 +27,13 @@ Un L-système est une grammaire formelle qui comprend :
 variables: list = ['F', '+', '-']
 axiome : str = "F"
 regle : dict = {"F" : "F+F-F-FF+F+F-F"}
-unite :str = 500
+unite : str = 500
+angle : str = 90
     
 
 print(axiome)
 t.pencolor('grey')
-g.dessine(axiome, unite)
+g.dessine(axiome, unite, angle)
 
 
 axiome = g.reecrire(axiome, regle)
@@ -42,7 +43,7 @@ t.pencolor('black')
 t.penup()
 t.home()
 t.pendown()
-g.dessine(axiome, unite)
+g.dessine(axiome, unite, angle)
 
 
 axiome = g.reecrire(axiome, regle)
@@ -52,7 +53,7 @@ t.pencolor('red')
 t.penup()
 t.home()
 t.pendown()
-g.dessine(axiome, unite)
+g.dessine(axiome, unite, angle)
 
 axiome = g.reecrire(axiome, regle)
 unite=unite/4
@@ -61,7 +62,7 @@ t.pencolor('green')
 t.penup()
 t.home()
 t.pendown()
-g.dessine(axiome, unite)
+g.dessine(axiome, unite, angle)
 
 axiome = g.reecrire(axiome, regle)
 unite=unite/4
@@ -70,4 +71,4 @@ t.pencolor('blue')
 t.penup()
 t.home()
 t.pendown()
-g.dessine(axiome, unite)
+g.dessine(axiome, unite, angle)
