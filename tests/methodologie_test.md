@@ -18,6 +18,7 @@ tester tous les fichiers
 ## Tester les fonctions avec pytest
 
 `pytest -v`
+`pytest -v tests_avec_pytest.py`
 
 ### Ré-écrire
 
@@ -26,10 +27,10 @@ En faisant confiance en ces sources, on peut obtenir des séquences fiables pour
 
 ### Dessiner
 
-Le test se fait en comparant une image de référence à celle fabriquée lors du test.
+Le test se fait en comparant une image de référence �  celle fabriquée lors du test.
 
 Le test utilise ``list(image.getdata()) de la librairie Pillow. On compare tous les pixels des deux images.
 
 Les images de tests sont produite en python avec turtel, dans le fichier fabrique_images.py
 
-Idem, les images sont fabriqué à partir d'exemple de wikipédia ou autre sources jugées fiable.'
+Idem, les images sont fabriqué �  partir d'exemple de wikipédia ou autre sources jugées fiable.'

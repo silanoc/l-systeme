@@ -68,7 +68,7 @@ def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
             position_courant.pop(-1)
             orientation_courant.pop(-1)
             t.pendown()
-        elif axiome_a_appliquer[i] == "X":
+        elif axiome_a_appliquer[i] in ["X", "S"]:
             pass
     t.Screen()
 
@@ -83,7 +83,7 @@ def reecrire_puis_dessine(axiome :str, regle : dict, unite : int, angle : int, n
         print(axiome)
     dessine(axiome, unite, angle)
     
-def reecrire_cumul_dessin(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int, facteur_division : int):
+def reecrire_cumul_dessin(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int, facteur_division : int = 1):
     """trace chaque réécriture de façon juxtaposé"""
     couleur = ['grey', 'black', 'red', 'green', 'blue' ]
     t.speed(10)
@@ -92,7 +92,11 @@ def reecrire_cumul_dessin(axiome :str, regle : dict, unite : int, angle : int, n
         print(axiome)
         dessine(axiome, unite, angle)
         axiome = reecrire(axiome, regle)
-        unite = unite / facteur_division #attention division par zéro
+        try:
+            unite = unite / facteur_division 
+        except ZeroDivisionError:
+            print("Attention, le facteur de division vaut Zéro et génére donc une erreur de divison. Le programme est arrêté")
+            break
         t.penup()
         t.home()
         t.pendown()

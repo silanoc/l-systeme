@@ -8,6 +8,7 @@ Script pour vérifier avec pytest que le script fonctionne.
 le fichier methodologie_test.md
 """
 
+
 import generateur
 from PIL import Image
 import turtle as t
@@ -25,7 +26,7 @@ def test_dessiner_courbe() -> None:
     """
     
     #ouvrir l'image de référence et en récupérer les valeurs des pixels.
-    image_reference = Image.open('./tests/test.png')
+    image_reference = Image.open('./tests/test_courbe_arche.png')
     reference = list(image_reference.getdata())
     
     #fabriquer l'image et en récupérer les valeurs des pixels
@@ -35,8 +36,24 @@ def test_dessiner_courbe() -> None:
     image.postscript(file="fabrique.png", colormode='color')
     image_fabrique = Image.open("fabrique.png")
     fabrique = list(image_fabrique.getdata())
+    t.reset()
+    t.bye()
     
     assert fabrique == reference
-                                      
+                               
 def test_dessiner_arbre():
-    pass
+    #ouvrir l'image de référence et en récupérer les valeurs des pixels.
+    image_reference = Image.open('./tests/test_arbre_de_base.png')
+    reference = list(image_reference.getdata())
+    
+    #fabriquer l'image et en récupérer les valeurs des pixels
+    generateur.dessine("F[-F][+F]", 50, 20)
+    t.setup(500, 500)
+    image = t.getcanvas()
+    image.postscript(file="fabrique.png", colormode='color')
+    image_fabrique = Image.open("fabrique.png")
+    fabrique = list(image_fabrique.getdata())
+    t.reset()
+    t.bye()
+    
+    assert fabrique == reference
