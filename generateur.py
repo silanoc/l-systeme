@@ -35,21 +35,21 @@ Un L-système est noté \{V, S, \omega, P\}.
 # fonctions de base
 ###
 
-def reecrire(axiome_a_convertir, regle) -> str :
+def reecrire(axiome_a_convertir : str, regle : dict ) -> str :
     """changer les axiome d'une fois à l'autre en fonction des regles de réécritre"""
-    axiome_intermediaire = ""
+    axiome_intermediaire : str = ""
     variables_a_transformer = regle.keys()
     for i in range(len(axiome_a_convertir)):
         if axiome_a_convertir[i] in variables_a_transformer:
             axiome_intermediaire = axiome_intermediaire + regle[axiome_a_convertir[i]]
         else:
             axiome_intermediaire = axiome_intermediaire + axiome_a_convertir[i]
-    return(axiome_intermediaire)
+    return axiome_intermediaire
 
 def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
     """avec tutrle dessine l'axiome en entrée"""
-    position_courant = []
-    orientation_courant = []
+    position_courant :list = []
+    orientation_courant : list = []
     for i in range(len(axiome_a_appliquer)):
         if axiome_a_appliquer[i] == "F":
             t.forward(unite_dessin)
@@ -76,14 +76,14 @@ def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
 # enchainements graphiques
 ###
 
-def reecrire_puis_dessine(axiome, regle, unite, angle, nb_tour):
+def reecrire_puis_dessine(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int):
     """fait plusieur ré-écriture et génére le tracé final"""
     for i in range(nb_tour):
         axiome = reecrire(axiome, regle)
         print(axiome)
     dessine(axiome, unite, angle)
     
-def reecrire_cumul_dessin(axiome, regle, unite, angle, nb_tour, facteur_division):
+def reecrire_cumul_dessin(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int, facteur_division : int):
     """trace chaque réécriture de façon juxtaposé"""
     couleur = ['grey', 'black', 'red', 'green', 'blue' ]
     t.speed(10)
@@ -92,7 +92,7 @@ def reecrire_cumul_dessin(axiome, regle, unite, angle, nb_tour, facteur_division
         print(axiome)
         dessine(axiome, unite, angle)
         axiome = reecrire(axiome, regle)
-        unite=unite/facteur_division
+        unite = unite / facteur_division #attention division par zéro
         t.penup()
         t.home()
         t.pendown()
@@ -105,16 +105,16 @@ def test_koch_1():
     variables: list = ['F', '+', '-']
     axiome : str = "F"
     regle : dict = {"F" : "F+F-F-F+F"}
-    unite :str = 10
-    angle :str = 90
+    unite : int = 10
+    angle : int = 90
     reecrire_puis_dessine(axiome, regle, unite, angle, 3)
 
 def test_koch_2():
     variables: list = ['F', '+', '-']
     axiome : str = "F"
     regle : dict = {"F" : "F+F-F-F+F"}
-    unite :str = 300
-    angle :str = 90
+    unite : int = 300
+    angle : int = 90
     reecrire_cumul_dessin(axiome, regle, unite, angle, 5, 3)
 
 

@@ -27,8 +27,8 @@ Un L-système est une grammaire formelle qui comprend :
 variables: list = ['F', '+', '-']
 axiome : str = "F"
 regle : dict = {"F" : "F+F-F-FF+F+F-F"}
-unite : str = 10
-angle : str = 90
+unite : int = 10
+angle : int = 90
     
 #g.reecrire_puis_dessine(axiome, regle, 10, angle, 3)
 g.reecrire_cumul_dessin(axiome, regle, 500, angle, 5, 4)

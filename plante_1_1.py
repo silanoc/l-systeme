@@ -19,8 +19,8 @@ F=FF
 #variables: list = ['F', '+', '-']
 axiome : str = "X"
 regle : dict = {"X" : "F[+X]F[-X]+X", "F" : "FF"}
-unite : str = 10
-angle : str = 20 
+unite : int = 10
+angle : int = 20 
 
 """
 #GB
