@@ -5,23 +5,27 @@
 - https://fr.wikipedia.org/wiki/L-Syst%C3%A8me
 - http://accromath.uqam.ca/2013/09/l-systemes-les-equations-des-plantes/
 
-## Definition
+## Concepts de bases
+
+### Definition
 
 - Une grammaire formelle, un systeme de ré-écriture
 - Aristid Lindenmayer
 
-## Systeme d'écriture formelle
+### Systeme d'écriture formelle
 
 Un L-système est un système de réécriture qui comprend :
 
-- Un alphabet $V$ : l'ensemble des variables du L-système. On note $V^*$ l'ensemble des « mots » que l'on peut construire avec les symboles de $V$, et $V⁺$ l'ensemble des mots contenant au moins un symbole ;
+- Un alphabet $V$ : l'ensemble des variables du L-système. 
+    - On note $V^*$ l'ensemble des « mots » que l'on peut construire avec les symboles de $V$
+    - $V⁺$ l'ensemble des mots contenant au moins un symbole ;
 - Un ensemble de valeur constantes $S$. Certains de ces symboles sont communs à tous les L-systèmes (voir plus bas l'interprétation en tortue) ;
 - Un axiome de départ $w$ de $V⁺$, vu comme l'état initial ;
 - Un ensemble de règles réécriture, noté $P$, de reproduction des symboles de $V$.
 
 Un L-système est noté { $V$ , $S$ , $w$ , $P$ }
 
-## La tortue
+### La tortue
 
 - F : Se déplacer d’un pas unitaire (∈ $V$)
 ---
@@ -46,19 +50,38 @@ Pour la 3d
 
 ## Explorer
 
+### D0L-système ou Deterministic 0-context System
 
-```python
-import generateur as g
-```
+Indépendant du contexte, donne toujours la même chose.
+
+#### Courbe de Koch carrée
+
+- Variable : $V$ = {F}
+- Constantes : $S$ = {+, −}
+- Axiome : $w$ = F
+- Règle : $P$ (F → F+F−F−F+F)
+
+voir courbe_de_Koch_carre.py
 
 
-```python
-g.test_koch_1()
-```
 
-    F+F-F-F+F
-    F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
-    F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
