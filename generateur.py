@@ -3,34 +3,6 @@
 
 import turtle as t
 
-"""
-    F : Se déplacer d’un pas unitaire (∈ V)
-    + : Tourner à gauche d’angle α (∈ S)
-    - : Tourner à droite d’un angle α (∈ S)
-    & : Pivoter vers le bas d’un angle α (∈ S)
-    ^ : Pivoter vers le haut d’un angle α (∈ S)
-    < : Roulez vers la gauche d’un angle α (∈ S)
-    > : Roulez vers la droite d’un angle α (∈ S)
-    | : Tourner sur soi-même de 180 ° (∈ S)
-    [ : Sauvegarder la position courante (∈ S)
-    ] : Restaurer la dernière position sauvée (∈ S)
-
-Un L-système est une grammaire formelle qui comprend :
-
-    Un alphabet V : l'ensemble des variables du L-système. V^* est l'ensemble des « mots » que l'on peut construire avec les symboles de V, et V^+ l'ensemble des mots contenant au moins un symbole.
-    Un ensemble de valeur constantes S. Certains de ces symboles sont communs à tous les L-système (voir plus bas la Turtle interpretation).
-    Un axiome de départ \omega choisi parmi V^+, c'est-à-dire l'état initial.
-    Un ensemble de règles, noté P, de reproduction des symboles de V.
-
-Un L-système est noté \{V, S, \omega, P\}.
-
-    Variable : v = {F}
-    Constantes : S = {+, −}
-    Axiome : w = F
-    Règle : (F → F+F-F-F+F)
-
-"""
-
 ###
 # fonctions de base
 ###
@@ -76,14 +48,14 @@ def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
 # enchainements graphiques
 ###
 
-def reecrire_puis_dessine(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int):
+def reecrire_puis_dessine(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int) -> None:
     """fait plusieur ré-écriture et génére le tracé final"""
     for i in range(nb_tour):
         axiome = reecrire(axiome, regle)
         print(axiome)
     dessine(axiome, unite, angle)
     
-def reecrire_cumul_dessin(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int, facteur_division : int = 1):
+def reecrire_cumul_dessin(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int, facteur_division : int = 1) -> None:
     """trace chaque réécriture de façon juxtaposé"""
     couleur = ['grey', 'black', 'red', 'green', 'blue' ]
     t.speed(10)
@@ -102,11 +74,12 @@ def reecrire_cumul_dessin(axiome :str, regle : dict, unite : int, angle : int, n
         t.pendown()
 
 ###
-# fonction pour controler vi un exemple connu de wikipedia
+# fonction pour controler via un exemple connu de wikipedia
 ###
 
-def test_koch_1():
-    variables: list = ['F', '+', '-']
+def test_koch_1() -> None:
+    alphabet : list = ["F"]
+    variables: list = ['+', '-']
     axiome : str = "F"
     regle : dict = {"F" : "F+F-F-F+F"}
     unite : int = 10
@@ -114,7 +87,8 @@ def test_koch_1():
     reecrire_puis_dessine(axiome, regle, unite, angle, 3)
 
 def test_koch_2():
-    variables: list = ['F', '+', '-']
+    alphabet : list = ["F"]
+    variables: list = ['+', '-']
     axiome : str = "F"
     regle : dict = {"F" : "F+F-F-F+F"}
     unite : int = 300
