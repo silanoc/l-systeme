@@ -4,19 +4,19 @@
 import console_commande as cc
 
 """
-Courbe de Koch carrée
+Flocon de Koch 
 - Variable : v = {F}
 - Constantes : S = {+, −}
-- Axiome : w = F
-- Règle : (F → F+F-F-F+F)
+- Axiome : w = F--F--F
+- Règle : (F → F+F-F+F)
 """
 
-def initialiser_courbe_koch_carre() -> dict:
+def initialiser_flocon_koch() -> dict:
     alphabet : list = ['F']
     variables : list = ['+', '-']
-    axiome : str = "F"
-    regles : dict = {"F" : "F+F-F-F+F"}
-    angle : float = float(90)
+    axiome : str = "F--F--F"
+    regles : dict = {"F" : "F+F--F+F"}
+    angle : float = float(60)
     facteur_division = 3
     systeme : dict = {'alphabet' : alphabet, 'variables' : variables,
                'axiome' : axiome, 'regles' : regles, 
@@ -26,5 +26,5 @@ def initialiser_courbe_koch_carre() -> dict:
 
 if __name__ == '__main__':    
 
-    systeme = initialiser_courbe_koch_carre()
+    systeme = initialiser_flocon_koch()
     cc.dessiner_choix(systeme)
