@@ -3,7 +3,7 @@
 
 import turtle as t
 
-def dessine_courbe_arche():
+def dessine_courbe_arche() -> None: 
 
     t.setup(500, 500)
     
@@ -22,7 +22,7 @@ def dessine_courbe_arche():
     image = t.getcanvas()
     image.postscript(file="test_courbe_arche.png", colormode='color')
     
-def dessine_arbre_de_base():
+def dessine_arbre_de_base() -> None:
     
     t.setup(500, 500)
     
@@ -36,14 +36,15 @@ def dessine_arbre_de_base():
     t.right(20 * 2)
     t.forward(taille)
     t.forward(taille * -1)
+    t.left(20)
     
     image = t.getcanvas()
     image.postscript(file="test_arbre_de_base.png", colormode='color')
     
 if __name__ == '__main__':   
     
-    dessine_courbe_arche()
-    #dessine_arbre_de_base()
+    #dessine_courbe_arche()
+    dessine_arbre_de_base()
     
     
     

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import console_commande as cc
+import interface.console_commande as cc
 
 """
 Courbe de Koch carrée

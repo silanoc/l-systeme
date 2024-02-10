@@ -20,6 +20,7 @@ tester tous les fichiers
 ## Tester les fonctions avec pytest
 
 `pytest -v`
+
 `pytest -v tests_avec_pytest.py`
 
 ### Ré-écrire
@@ -36,3 +37,9 @@ Le test utilise ``list(image.getdata()) de la librairie Pillow. On compare tous 
 Les images de tests sont produite en python avec turtel, dans le fichier fabrique_images.py
 
 Idem, les images sont fabriqué �  partir d'exemple de wikipédia ou autre sources jugées fiable.'
+
+### console commande
+
+utilisation de     
+monkeypatch.setattr('builtins.input', lambda _: '42')
+pour simuler un input dans le test

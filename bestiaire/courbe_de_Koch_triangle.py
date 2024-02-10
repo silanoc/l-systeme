@@ -1,12 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Feb  8 22:45:10 2024
 
-@author: silanoc
-"""
-
-import console_commande as cc
+import interface.console_commande as cc
 
 """
 Courbe de Koch triangle

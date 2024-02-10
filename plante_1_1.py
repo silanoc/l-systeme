@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import generateur as g
+import domaine.generateur as g
 
 """
 Un L-système est noté \{V, S, \omega, P\}.
@@ -14,6 +14,7 @@ F=FF
 }
 """
 
+"""
 #fr
 # Initialiser
 #variables: list = ['F', '+', '-']
@@ -30,7 +31,7 @@ axiome : str = "X"
 regle : dict = {"X" : "F+[[X]-X]-F[-FX]+X", "F" : "FF"}
 unite : str = 10
 angle : str = 25 
-"""
+
 
 # Calculer les ré-éctitures souhaitées
 for i in range(5):

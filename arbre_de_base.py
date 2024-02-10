@@ -7,7 +7,7 @@ Created on Tue Feb  6 22:11:37 2024
 
 source https://accromath.uqam.ca/2013/09/l-systemes-les-equations-des-plantes/
 """
-import generateur as g
+import domaine.generateur as g
 
 # Initialiser
 #variables: list = ['F', '+', '-']

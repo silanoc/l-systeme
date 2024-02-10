@@ -2,7 +2,7 @@
 %%Creator: Tk Canvas Widget
 %%For: silanoc,,,
 %%Title: Window .!canvas
-%%CreationDate: Tue Feb  6 21:50:08 2024
+%%CreationDate: Sat Feb 10 23:03:32 2024
 %%BoundingBox: 119 209 493 583
 %%Pages: 1
 %%DocumentData: Clean7Bit
@@ -78,7 +78,7 @@ baselineSampler 0 196 put
 %%Page: 1 1
 save
 306.0 396.0 translate
-0.7476 0.7476 scale
+0.7493 0.7493 scale
 2 -249 translate
 -251 498 moveto 247 498 lineto 247 0 lineto -251 0 lineto closepath clip newpath
 gsave
@@ -101,16 +101,16 @@ gsave
 grestore
 gsave
 50 247 moveto
-43.2528671295552 254.776644393861 lineto
-43.4221516544986 249.39414100328 lineto
-39.8326656962985 245.379718186001 lineto
+41 252 lineto
+43 247 lineto
+41 242 lineto
 50 247 lineto
 0.000 0.000 0.000 setrgbcolor AdjustColor
 eofill
 50 247 moveto
-43.2528671295552 254.776644393861 lineto
-43.4221516544986 249.39414100328 lineto
-39.8326656962985 245.379718186001 lineto
+41 252 lineto
+43 247 lineto
+41 242 lineto
 50 247 lineto
 1 setlinejoin 1 setlinecap
 1 setlinewidth

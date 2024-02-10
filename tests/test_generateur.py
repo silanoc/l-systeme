@@ -36,25 +36,24 @@ def test_dessiner_courbe() -> None:
     image_fabrique = Image.open("./tests/fabrique.png")
     fabrique = list(image_fabrique.getdata())
     t.reset()
-    t.bye()
+    #t.bye()
     
     assert fabrique == reference
   
-"""                             
-def test_dessiner_arbre():
+                        
+def test_dessiner_arbre() -> None:
     #ouvrir l'image de référence et en récupérer les valeurs des pixels.
     image_reference = Image.open('./tests/test_arbre_de_base.png')
     reference = list(image_reference.getdata())
     
     #fabriquer l'image et en récupérer les valeurs des pixels
-    generateur.dessine("F[-F][+F]", 50, 20)
+    generateur.dessine('F[-F][+F]', 50, 20)
     t.setup(500, 500)
     image = t.getcanvas()
     image.postscript(file="fabrique.png", colormode='color')
     image_fabrique = Image.open("fabrique.png")
     fabrique = list(image_fabrique.getdata())
     t.reset()
-    t.bye()
+    #t.bye()
     
     assert fabrique == reference
-"""
