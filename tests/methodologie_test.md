@@ -15,6 +15,8 @@ tester tous les fichiers
 
 `mypy --check-untyped-defs *.py`
 
+`mypy *.py ./bestiaire/*.py ./tests/*.py`
+
 ## Tester les fonctions avec pytest
 
 `pytest -v`

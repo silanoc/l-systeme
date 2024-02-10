@@ -12,7 +12,7 @@ Flocon de Koch
 """
 
 def initialiser_flocon_koch() -> dict:
-    alphabet : list = ['F']
+    alphabet : list[str] = ['F']
     variables : list = ['+', '-']
     axiome : str = "F--F--F"
     regles : dict = {"F" : "F+F--F+F"}

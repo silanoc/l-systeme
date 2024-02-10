@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import turtle as t
+from typing import Union
+FloatInt = Union[float, int] #typage float ou int
 
 ###
 # fonctions de base
@@ -18,7 +20,7 @@ def reecrire(axiome_a_convertir : str, regle : dict ) -> str :
             axiome_intermediaire = axiome_intermediaire + axiome_a_convertir[i]
     return axiome_intermediaire
 
-def dessine(axiome_a_appliquer : str, unite_dessin : int, angle_dessin) -> None:
+def dessine(axiome_a_appliquer : str, unite_dessin : FloatInt, angle_dessin) -> None:
     """avec tutrle dessine l'axiome en entrée"""
     position_courant :list = []
     orientation_courant : list = []
@@ -55,7 +57,7 @@ def reecrire_puis_dessine(axiome :str, regle : dict, unite : int, angle : int, n
         print(axiome)
     dessine(axiome, unite, angle)
     
-def reecrire_cumul_dessin(axiome :str, regle : dict, unite : int, angle : int, nb_tour : int, facteur_division : int = 1) -> None:
+def reecrire_cumul_dessin(axiome :str, regle : dict, unite : FloatInt, angle : int, nb_tour : int, facteur_division : int = 1) -> None:
     """trace chaque réécriture de façon juxtaposé"""
     couleur = ['grey', 'black', 'red', 'green', 'blue' ]
     t.speed(10)
@@ -86,8 +88,8 @@ def test_koch_1() -> None:
     angle : int = 90
     reecrire_puis_dessine(axiome, regle, unite, angle, 3)
 
-def test_koch_2():
-    alphabet : list = ["F"]
+def test_koch_2() -> None:
+    alphabet : list[str] = ["F"]
     variables: list = ['+', '-']
     axiome : str = "F"
     regle : dict = {"F" : "F+F-F-F+F"}
@@ -98,5 +100,5 @@ def test_koch_2():
 
 if __name__ == '__main__':    
     
-    test_koch_1()
-    #test_koch_2()
+    #test_koch_1()
+    test_koch_2()
