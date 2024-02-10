@@ -2,7 +2,7 @@
 %%Creator: Tk Canvas Widget
 %%For: silanoc,,,
 %%Title: Window .!canvas
-%%CreationDate: Tue Feb  6 21:39:00 2024
+%%CreationDate: Sat Feb 10 17:57:18 2024
 %%BoundingBox: 119 209 493 583
 %%Pages: 1
 %%DocumentData: Clean7Bit
@@ -78,7 +78,7 @@ baselineSampler 0 196 put
 %%Page: 1 1
 save
 306.0 396.0 translate
-0.7476 0.7476 scale
+0.7493 0.7493 scale
 2 -249 translate
 -251 498 moveto 247 498 lineto 247 0 lineto -251 0 lineto closepath clip newpath
 gsave

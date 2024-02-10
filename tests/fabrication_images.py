@@ -42,8 +42,8 @@ def dessine_arbre_de_base():
     
 if __name__ == '__main__':   
     
-    #dessine_courbe_arche()
-    dessine_arbre_de_base()
+    dessine_courbe_arche()
+    #dessine_arbre_de_base()
     
     
     

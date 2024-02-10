@@ -5,7 +5,7 @@
 demande les instructions et trace le systeme demandé
 """
 
-import generateur as g
+import domaine.generateur as g
 
 def demander_unite() -> int:
     unite : int = int(input('taille du segment'))
