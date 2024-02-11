@@ -23,6 +23,9 @@ def reecrire(axiome_a_convertir : str, regle : dict ) -> str :
 def dessine(axiome_a_appliquer : str, unite_dessin : FloatInt, angle_dessin) -> None:
     """avec tutrle dessine l'axiome en entrée
     seul F fait avancer la tortue"""
+    
+    t.reset() #efface le contenu de l'affichage eventuel
+    
     position_courant :list = []
     orientation_courant : list = []
     for i in range(len(axiome_a_appliquer)):
@@ -76,30 +79,6 @@ def reecrire_cumul_dessin(axiome :str, regle : dict, unite : FloatInt, angle : i
         t.home()
         t.pendown()
 
-###
-# fonction pour controler via un exemple connu de wikipedia
-###
-
-def test_koch_1() -> None:
-    alphabet : list = ["F"]
-    variables: list = ['+', '-']
-    axiome : str = "F"
-    regle : dict = {"F" : "F+F-F-F+F"}
-    unite : int = 10
-    angle : int = 90
-    reecrire_puis_dessine(axiome, regle, unite, angle, 3)
-
-def test_koch_2() -> None:
-    alphabet : list[str] = ["F"]
-    variables: list = ['+', '-']
-    axiome : str = "F"
-    regle : dict = {"F" : "F+F-F-F+F"}
-    unite : int = 300
-    angle : int = 90
-    reecrire_cumul_dessin(axiome, regle, unite, angle, 5, 3)
-
-
-if __name__ == '__main__':    
+if __name__ == '__main__':  
+    pass
     
-    #test_koch_1()
-    test_koch_2()

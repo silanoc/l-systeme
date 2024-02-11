@@ -43,3 +43,11 @@ Idem, les images sont fabriqué �  partir d'exemple de wikipédia ou autre sourc
 utilisation de     
 monkeypatch.setattr('builtins.input', lambda _: '42')
 pour simuler un input dans le test
+
+## Couverture des tests
+
+librairie Coverage
+
+`pytest --cov`
+
+version 1 du 2024-02-11 : 56 %

@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """
-Script pour vérifier avec pytest que le script fonctionne.
+Scripts pour vérifier avec pytest que le script generateur fonctionne.
 - test_reecrire : facile
-- test_dessiner_courbe : comparaison de fichier image. Explication dans 
-le fichier methodologie_test.md
+- test_dessiner_courbe et test_dessiner_arbre : comparaison de fichier image. 
+  Explication dans le fichier methodologie_test.md
 """
 
 import domaine.generateur as generateur
@@ -23,11 +23,9 @@ def test_dessiner_courbe() -> None:
     La comparaisons des images, se fait par la comparaison pixel par pixel de
     chaque image. Ils sont dans des listes via la fonction list(image.getdata())
     """
-    
     #ouvrir l'image de référence et en récupérer les valeurs des pixels.
     image_reference = Image.open('./tests/test_courbe_arche.png')
     reference = list(image_reference.getdata())
-    
     #fabriquer l'image et en récupérer les valeurs des pixels
     generateur.dessine('F+F-F-F+F', 50, 90)
     t.setup(500, 500)
@@ -36,16 +34,12 @@ def test_dessiner_courbe() -> None:
     image_fabrique = Image.open("./tests/fabrique.png")
     fabrique = list(image_fabrique.getdata())
     t.reset()
-    #t.bye()
-    
     assert fabrique == reference
-  
-                        
+                      
 def test_dessiner_arbre() -> None:
     #ouvrir l'image de référence et en récupérer les valeurs des pixels.
     image_reference = Image.open('./tests/test_arbre_de_base.png')
     reference = list(image_reference.getdata())
-    
     #fabriquer l'image et en récupérer les valeurs des pixels
     generateur.dessine('F[-F][+F]', 50, 20)
     t.setup(500, 500)
@@ -54,6 +48,4 @@ def test_dessiner_arbre() -> None:
     image_fabrique = Image.open("./tests/fabrique.png")
     fabrique = list(image_fabrique.getdata())
     t.reset()
-    #t.bye()
-    
     assert fabrique == reference
