@@ -1,20 +1,31 @@
 # L-Système
 
-Projet commencé en 2015, surement 1 des premiers après avoir programmé en squeak.
-Reprise en 2024
-Silanoc
+- Date :
+    - Projet commencé en 2015, surement 1 des premiers après avoir programmé en squeak.
+    - Reprise en févirer 2024
+- Autaire : Silanoc
+- Version : 1
 
-## Fichiers de 2015
-- plante 1.py
-- courbe de Koch 1.py
-- Courbe de Kock 2.py
+## Objectif
+
+Programme pour tracer des courbe de type L-système.
+Lire le doc L-systeme.md pour les explications.
+
+Les dessin sont fait par le module turtle de python.
+
+## Architecture
+
+- bestiaire
+    |- plusieurs fichiers pouvant etre exécuté et servant à intialiser des dessins
+    |
+- domaine
+    |- generateur.py : le fichier principale
 - image Fractale
-    - Capture du 2015-03-22 22:27:57.png
-    - Capture du 2015-03-22 22:30:10.png
-    - Capture du 2015-03-22 22:36:11.png
-    - fractale1.png
-
-## Commentaires
-- les captures d'écrans viennent d'un code perdu
-- 3 fichiers avec des doublosn de codes (import non connu)
-- plante ne gere pas les mémorisations de positions.
+    |- des images d'archives de 2015
+- interface
+    |- console_commande.py 
+- tests
+-L-système.md
+README.md
+requierement.txt
+    

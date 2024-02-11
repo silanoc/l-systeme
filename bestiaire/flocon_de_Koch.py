@@ -9,6 +9,8 @@ Flocon de Koch
 - Constantes : S = {+, −}
 - Axiome : w = F--F--F
 - Règle : (F → F+F-F+F)
+
+source : https://fr.wikipedia.org/wiki/Flocon_de_Koch
 """
 
 def initialiser_flocon_koch() -> dict:

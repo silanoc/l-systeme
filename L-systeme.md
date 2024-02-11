@@ -3,6 +3,7 @@
 ## Sources
 
 - https://fr.wikipedia.org/wiki/L-Syst%C3%A8me
+- https://fr.wikipedia.org/wiki/Flocon_de_Koch
 - http://accromath.uqam.ca/2013/09/l-systemes-les-equations-des-plantes/
 
 ## Concepts de bases
@@ -54,30 +55,89 @@ Pour la 3d
 
 Indépendant du contexte, donne toujours la même chose.
 
-#### Courbe de Koch carrée
+#### Courbes, fractales géométriques
+
+terme à améliorer.
+
+##### Courbe de Koch triangle
+
+- Variable : $v$ = {F}
+- Constantes : $S$ = {+, −}
+- Axiome : $w$ = F
+- Règle : $p$ = (F → F+F-F+F)
+
+##### Flocon de Koch
+
+- Variable : $v$ = {F}
+- Constantes : $S$ = {+, −}
+- Axiome : $w$ = F--F--F
+- Règle : $p$ (F → F+F-F+F)
+
+##### Courbe quadratique de Koch (type 1)
 
 - Variable : $V$ = {F}
 - Constantes : $S$ = {+, −}
 - Axiome : $w$ = F
-- Règle : $P$ (F → F+F−F−F+F)
+- Règle : $P$ = (F → F+F−F−F+F)
 
-voir courbe_de_Koch_carre.py
+voir courbe_quadratique_de_Koch_type_1.py
+
+##### Courbe quadratique de Koch (type 2)
+
+- Variable : $V$ = {F}
+- Constantes : $S$ = {+, −}
+- Axiome : $w$ = F
+- Règle : $P$ = (F → F+F-F-FF+F+F-F)
+
+voir courbe_quadratique_de_Koch_type_2.py
+
+#### plantes, arbres...
+
+##### arbre de base
+
+Le plus simple trouvé sur internet 
+https://accromath.uqam.ca/2013/09/l-systemes-les-equations-des-plantes/
 
 
+- Variable : $V$ = {F, S}
+- Constantes : $S$ = {+, −, \[\, \]}
+- Axiome : $w$ = F
+- Règle : $P$ = (F → S\[-F\]+[+F])
+
+F : branche Fertile (tortue avance en vert)
+S : branche stérile (tortue avance en marron)
+
+Pour le moment pas de couleur prise en charge, donc F -> F\[-F\]+[+F]
+
+voir plante_1.py
+
+#### plante 1
+
+source : https://fr.wikipedia.org/wiki/L-Syst%C3%A8me#Exemple_d'un_D0L-syst%C3%A8me
+
+Plante
+{
+angle 20
+axiom X
+X=F[+X]F[−X]+X
+F=FF
+}
+
+F autorise la tortue à se déplacer, pas X qui conte comme "rien"
+
+voir plante_1.py
 
 
+#### plante 2
 
+source : https://en.wikipedia.org/wiki/L-system#Example_7:_fractal_plant
 
+- alphabet = ['F', 'X']
+- variables = ['+', '-', '[', ']']
+- axiome = "X"
+- regles = {"X" : "F+[[X]-X]-F[-FX]+X", "F" : "FF"}
 
-
-
-
-
-
-
-
-
-
+voir plante_2.py
 
 
 

@@ -21,7 +21,8 @@ def reecrire(axiome_a_convertir : str, regle : dict ) -> str :
     return axiome_intermediaire
 
 def dessine(axiome_a_appliquer : str, unite_dessin : FloatInt, angle_dessin) -> None:
-    """avec tutrle dessine l'axiome en entrée"""
+    """avec tutrle dessine l'axiome en entrée
+    seul F fait avancer la tortue"""
     position_courant :list = []
     orientation_courant : list = []
     for i in range(len(axiome_a_appliquer)):
@@ -42,7 +43,7 @@ def dessine(axiome_a_appliquer : str, unite_dessin : FloatInt, angle_dessin) -> 
             position_courant.pop(-1)
             orientation_courant.pop(-1)
             t.pendown()
-        elif axiome_a_appliquer[i] in ["X", "S"]:
+        else:
             pass
     t.Screen()
 

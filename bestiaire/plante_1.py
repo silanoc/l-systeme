@@ -1,28 +1,11 @@
-from turtle import *
-setup(width=1000,height=1000)
-import tkinter as tk
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import interface.console_commande as cc
+
 
 """
-    F : Se déplacer d’un pas unitaire (∈ V)
-    + : Tourner à gauche d’angle α (∈ S)
-    - : Tourner à droite d’un angle α (∈ S)
-    & : Pivoter vers le bas d’un angle α (∈ S)
-    ^ : Pivoter vers le haut d’un angle α (∈ S)
-    < : Roulez vers la gauche d’un angle α (∈ S)
-    > : Roulez vers la droite d’un angle α (∈ S)
-    | : Tourner sur soi-même de 180 ° (∈ S)
-    [ : Sauvegarder la position courante (∈ S)
-    ] : Restaurer la dernière position sauvée (∈ S)
-
-Un L-système est une grammaire formelle qui comprend :
-
-    Un alphabet V : l'ensemble des variables du L-système. V^* est l'ensemble des « mots » que l'on peut construire avec les symboles de V, et V^+ l'ensemble des mots contenant au moins un symbole.
-    Un ensemble de valeur constantes S. Certains de ces symboles sont communs à tous les L-système (voir plus bas la Turtle interpretation).
-    Un axiome de départ \omega choisi parmi V^+, c'est-à-dire l'état initial.
-    Un ensemble de règles, noté P, de reproduction des symboles de V.
-
-Un L-système est noté \{V, S, \omega, P\}.
-
+source : https://fr.wikipedia.org/wiki/L-Syst%C3%A8me#Exemple_d'un_D0L-syst%C3%A8me
 
 Plante
 {
@@ -32,8 +15,52 @@ X=F[+X]F[−X]+X
 F=FF
 }
 
+ATTENTION : F autorise la tortue à se déplacer, pas X qui conte comme "rien"
+
 """
 
+def initialiser_plante_wp_fr_l_systeme() -> dict:
+    alphabet : list[str] = ['F', 'X']
+    variables : list = ['+', '-', '[', ']']
+    axiome : str = "X"
+    regles : dict = {"F" : "FF", "X" : "F[+X]F[-X]+X"}
+    angle : float = float(20)
+    facteur_division = 1
+    systeme : dict = {'alphabet' : alphabet, 'variables' : variables,
+               'axiome' : axiome, 'regles' : regles, 
+               'angle' : angle, 'facteur_division' : facteur_division}
+    return systeme
+
+if __name__ == '__main__':    
+
+    systeme = initialiser_plante_wp_fr_l_systeme()
+    cc.dessiner_choix(systeme)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 regle="X"
 regleintermediaire=""
 generation=0
@@ -84,6 +111,8 @@ regle=generationsuivante(regle)
 
 print(regle)
 dessine()
+
+"""
 
 """
 regle=generationsuivante(regle)
