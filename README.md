@@ -15,6 +15,6 @@ Silanoc
     - fractale1.png
 
 ## Commentaires
-- les captures d'écrans viennent d'un code perdu
-- 3 fichiers avec des doublosn de codes (import non connu)
+- les captures d'écrans viennent des fichiers python
+- 3 fichiers avec des doublons de codes (import non connu)
 - plante ne gere pas les mémorisations de positions.
